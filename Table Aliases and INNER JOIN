@@ -39,6 +39,16 @@ GROUP BY c.connection_name,
 ORDER BY connection_count DESC;
 //wrong answer if someone finds the write answer please post it
 
+select e.connection_name,count(*)as  connection_count 
+from electricity_connection_type e
+join building_type b
+on e.id=b.connection_type_id
+join building bd
+on b.id=bd.building_type_id
+group by b.connection_type_id
+order by connection_count desc;
+//passes only sample test cases.. 
+
 
 6.
 
